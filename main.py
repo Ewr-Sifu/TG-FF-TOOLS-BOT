@@ -27,12 +27,13 @@ REQUIRED_CHANNELS = ["@maybesifatx69"]
 GROUP_JOIN_LINK    = "https://t.me/maybesifatx69"
 OWNER_ID           = 8438269386
 OWNER_USERNAME     = "@MaybeSifu"
+YT_CHANNEL         = "https://youtube.com/@maybes1fu"
 BOT_NAME           = "FF LIKES BOT"
 BOT_VERSION        = "3.0"
 AUTHOR             = "SIFAT 💀"
 
-# External API base (same domain used for all FF endpoints)
-API_BASE = "https://your-free-fire-like-api-domain"
+# External API base
+API_BASE = "https://ff-like-info-by-sifu.vercel.app"
 
 bot            = telebot.TeleBot(BOT_TOKEN)
 like_tracker   = {}        # { user_id: {used, last_used} }
@@ -104,9 +105,10 @@ def reset_countdown():
     return f"{h}h {m}m"
 
 def join_markup():
-    mu = InlineKeyboardMarkup()
+    mu = InlineKeyboardMarkup(row_width=1)
     for ch in REQUIRED_CHANNELS:
-        mu.add(InlineKeyboardButton(f"📢 Join {ch}", url=f"https://t.me/{ch.strip('@')}"))
+        mu.add(InlineKeyboardButton(f"╔ 📢 Join Telegram ➜ {ch} ╗", url=f"https://t.me/{ch.strip('@')}"))
+    mu.add(InlineKeyboardButton("╔ 🔴 Subscribe YouTube ➜ @maybes1fu ╗", url=YT_CHANNEL))
     return mu
 
 def limit_display(limit, remaining):
@@ -207,10 +209,16 @@ def cmd_start(message):
 
     mu = InlineKeyboardMarkup(row_width=2)
     mu.add(
-        InlineKeyboardButton("📖 Help",     callback_data="help"),
-        InlineKeyboardButton("📊 My Stats", callback_data="stats"),
-        InlineKeyboardButton("🏓 Ping",     callback_data="ping"),
-        InlineKeyboardButton("💬 Support",  url=f"https://t.me/{OWNER_USERNAME.strip('@')}")
+        InlineKeyboardButton("📖 Help",      callback_data="help"),
+        InlineKeyboardButton("📊 My Stats",  callback_data="stats"),
+    )
+    mu.add(
+        InlineKeyboardButton("🏓 Ping",      callback_data="ping"),
+        InlineKeyboardButton("💬 Support",   url=f"https://t.me/{OWNER_USERNAME.strip('@')}"),
+    )
+    mu.add(
+        InlineKeyboardButton("📢 TG Channel", url=f"https://t.me/{REQUIRED_CHANNELS[0].strip('@')}"),
+        InlineKeyboardButton("🔴 YouTube",    url=YT_CHANNEL),
     )
 
     bot.reply_to(message,
@@ -235,7 +243,7 @@ def cmd_start(message):
 
 # ─── /help ───────────────────────────────────────────────────────────────────
 
-TOTAL_COMMANDS = 14  # update if you add more
+TOTAL_COMMANDS = 15  # update if you add more
 
 @bot.message_handler(commands=['help'])
 def cmd_help(message):
@@ -248,10 +256,14 @@ def cmd_help(message):
 
     mu = InlineKeyboardMarkup(row_width=2)
     mu.add(
-        InlineKeyboardButton("📊 My Stats", callback_data="stats"),
-        InlineKeyboardButton("🏓 Ping",     callback_data="ping"),
-        InlineKeyboardButton("💬 Support",  url=f"https://t.me/{OWNER_USERNAME.strip('@')}")
+        InlineKeyboardButton("📊 My Stats",   callback_data="stats"),
+        InlineKeyboardButton("🏓 Ping",       callback_data="ping"),
     )
+    mu.add(
+        InlineKeyboardButton("📢 TG Channel", url=f"https://t.me/{REQUIRED_CHANNELS[0].strip('@')}"),
+        InlineKeyboardButton("🔴 YouTube",    url=YT_CHANNEL),
+    )
+    mu.add(InlineKeyboardButton("💬 Support", url=f"https://t.me/{OWNER_USERNAME.strip('@')}"))
 
     owner_section = ""
     if uid == OWNER_ID:
@@ -270,16 +282,17 @@ def cmd_help(message):
         f"│  📦 *Commands* : {TOTAL_COMMANDS}+\n"
         f"╰──────────────────────\n"
         "\n`╭─「 🎮 FREE FIRE TOOLS 」`\n"
-        "`├⊙` `/like`      `├⊙` `/profile`\n"
-        "`├⊙` `/guild`     `├⊙` `/rank`\n"
+        "`├⊙` `/like`       `├⊙` `/info`\n"
+        "`├⊙` `/profile`    `├⊙` `/rank`\n"
+        "`├⊙` `/guild`\n"
         "`╰──────────────────────`\n"
         "\n`╭─「 📊 USER TOOLS 」`\n"
-        "`├⊙` `/status`    `├⊙` `/ping`\n"
-        "`├⊙` `/servertime``├⊙` `/about`\n"
-        "`├⊙` `/help`      `├⊙` `/start`\n"
+        "`├⊙` `/status`     `├⊙` `/ping`\n"
+        "`├⊙` `/servertime` `├⊙` `/about`\n"
+        "`├⊙` `/help`       `├⊙` `/start`\n"
         "`╰──────────────────────`\n"
         f"{owner_section}\n"
-        f"\n🌍 *Regions:* `ind` `bd` `sg` `br` `ru` `us` `th` `id`\n"
+        f"\n🌍 *Regions:* `bd` `ind` `sg` `br` `ru` `us` `th` `id`\n"
         f"📌 *Example:* `/like bd 123456789`\n\n"
         f"💬 Support: {OWNER_USERNAME}"
     )
@@ -524,6 +537,83 @@ def _process_like(message, region, target_uid):
     except Exception as e:
         logger.error(f"_process_like: {e}")
         bot.reply_to(message, "⚠️ Likes sent, but couldn't decode the response.")
+
+# ─── /info ───────────────────────────────────────────────────────────────────
+
+@bot.message_handler(commands=['info'])
+def cmd_info(message):
+    uid  = message.from_user.id
+    args = message.text.split()
+    broadcast_log.add(uid)
+
+    if uid in banned_users:
+        bot.reply_to(message, "🚫 *You are banned.*", parse_mode="Markdown")
+        return
+    if not is_member(uid):
+        bot.reply_to(message, "❌ *Join our channel first!*", reply_markup=join_markup(), parse_mode="Markdown")
+        return
+    if len(args) != 3 or not args[1].isalpha() or not args[2].isdigit():
+        bot.reply_to(message,
+            "╭─「 ❌ *WRONG FORMAT* 」\n"
+            "│\n"
+            "│  `/info <region> <uid>`\n"
+            "│\n"
+            "│  🌍 Example:\n"
+            "│  `/info bd 123456789`\n"
+            "│\n"
+            "│  Regions: `bd` `ind` `sg` `br` `ru`\n"
+            "╰──────────────────────",
+            parse_mode="Markdown")
+        return
+
+    region, target_uid = args[1].upper(), args[2]
+    wait = bot.reply_to(message, "⏳ _Fetching player info..._", parse_mode="Markdown")
+    resp = api_get("info", {"uid": target_uid, "server_name": region})
+
+    if "error" in resp:
+        _edit(wait,
+            f"╭─「 ❌ *API ERROR* 」\n│\n│  ⚠️ `{resp['error']}`\n│\n╰─ 💬 {OWNER_USERNAME}")
+        return
+
+    try:
+        name        = resp.get("PlayerNickname") or resp.get("nickname", "N/A")
+        level       = resp.get("Level") or resp.get("level", "N/A")
+        likes       = resp.get("Likes") or resp.get("likes", "N/A")
+        exp         = resp.get("Exp") or resp.get("exp", "N/A")
+        rank        = resp.get("Rank") or resp.get("rank", "N/A")
+        br_rank     = resp.get("BRRank") or resp.get("brRank", "N/A")
+        cs_rank     = resp.get("CSRank") or resp.get("csRank", "N/A")
+        guild       = resp.get("GuildName") or resp.get("guildName", "—")
+        reg         = resp.get("Region") or region
+
+        mu = InlineKeyboardMarkup(row_width=2)
+        mu.add(
+            InlineKeyboardButton("❤️ Send Likes",  callback_data=f"like_{region}_{target_uid}"),
+            InlineKeyboardButton("💬 Support",      url=f"https://t.me/{OWNER_USERNAME.strip('@')}"),
+        )
+
+        _edit(wait,
+            f"╭─「 🎮 *PLAYER INFO* 」\n"
+            f"│\n"
+            f"│  👤 *Name*     : `{name}`\n"
+            f"│  🆔 *UID*      : `{target_uid}`\n"
+            f"│  🌍 *Region*   : `{reg}`\n"
+            f"│\n"
+            f"│  ━━━━━━━━━━━━━━━━━━\n"
+            f"│  ⚔️ *Level*    : `{level}`\n"
+            f"│  ✨ *EXP*      : `{exp}`\n"
+            f"│  ❤️ *Likes*    : `{likes}`\n"
+            f"│\n"
+            f"│  ━━━━━━━━━━━━━━━━━━\n"
+            f"│  🏆 *BR Rank*  : `{br_rank}`\n"
+            f"│  🔫 *CS Rank*  : `{cs_rank}`\n"
+            f"│  🏰 *Guild*    : `{guild}`\n"
+            f"│\n"
+            f"╰─ ☠️ {AUTHOR}",
+            markup=mu)
+    except Exception as e:
+        logger.error(f"cmd_info: {e}")
+        _edit(wait, "⚠️ Could not parse player info. Check the UID and region.")
 
 # ─── /profile ────────────────────────────────────────────────────────────────
 
@@ -838,9 +928,28 @@ def on_callback(call):
     elif call.data == "help":
         cmd_help(call.message)
 
+    elif call.data.startswith("like_"):
+        # Format: like_REGION_UID
+        parts = call.data.split("_", 2)
+        if len(parts) == 3:
+            _, region, target_uid = parts
+            if uid in banned_users:
+                bot.answer_callback_query(call.id, "🚫 You are banned.", show_alert=True)
+                return
+            if not is_member(uid):
+                bot.answer_callback_query(call.id, "❌ Join our channel first!", show_alert=True)
+                return
+            _, remaining, limit = get_usage(uid)
+            if remaining <= 0 and limit < 1_000_000:
+                bot.answer_callback_query(call.id, f"⏳ Limit reached! Resets in {reset_countdown()}", show_alert=True)
+                return
+            bot.answer_callback_query(call.id, "⏳ Sending likes...")
+            # Fake a message object context for process_like
+            threading.Thread(target=_process_like, args=(call.message, region.lower(), target_uid)).start()
+
 # ─── UNKNOWN COMMANDS ────────────────────────────────────────────────────────
 
-KNOWN_CMDS = {'/start','/like','/help','/remain','/ping','/status',
+KNOWN_CMDS = {'/start','/like','/info','/help','/remain','/ping','/status',
               '/profile','/guild','/rank','/servertime','/about',
               '/broadcast','/ban','/unban','/addlimit','/users'}
 
