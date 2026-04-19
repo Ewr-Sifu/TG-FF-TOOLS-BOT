@@ -33,7 +33,7 @@ YT_CHANNEL         = "https://youtube.com/@maybes1fu"
 BOT_NAME           = "S1FAT LIKE BOT"
 BOT_VERSION        = "1.0"
 AUTHOR             = "SIFAT 💀"
-API_BASE           = "" // your API url example:= https://ff-like-by-sifu.vercel.app
+API_BASE           = "" # your API url example:= https://ff-like-by-sifu.vercel.app
 
 # Cost & rewards
 LIKE_COST          = 20   # points per like
