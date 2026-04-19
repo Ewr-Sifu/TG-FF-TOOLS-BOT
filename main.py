@@ -280,7 +280,7 @@ def cmd_help(message):
         "`╰──────────────────────`\n"
         f"{owner_section}\n"
         f"\n🌍 *Regions:* `ind` `bd` `sg` `br` `ru` `us` `th` `id`\n"
-        f"📌 *Example:* `/like ind 123456789`\n\n"
+        f"📌 *Example:* `/like bd 123456789`\n\n"
         f"💬 Support: {OWNER_USERNAME}"
     )
 
@@ -414,7 +414,7 @@ def cmd_like(message):
             "│  `/like <region> <uid>`\n"
             "│\n"
             "│  🌍 Example:\n"
-            "│  `/like ind 123456789`\n"
+            "│  `/like bd 123456789`\n"
             "│\n"
             "│  Regions: `ind bd sg br ru us`\n"
             "╰──────────────────────",
@@ -423,7 +423,7 @@ def cmd_like(message):
 
     region, target_uid = args[1].lower(), args[2]
     if not region.isalpha() or not target_uid.isdigit():
-        bot.reply_to(message, "⚠️ Region = letters only, UID = numbers only.\nExample: `/like ind 123456789`", parse_mode="Markdown")
+        bot.reply_to(message, "⚠️ Region = letters only, UID = numbers only.\nExample: `/like bd 123456789`", parse_mode="Markdown")
         return
 
     threading.Thread(target=_process_like, args=(message, region, target_uid)).start()
@@ -541,7 +541,7 @@ def cmd_profile(message):
         return
     if len(args) != 3 or not args[1].isalpha() or not args[2].isdigit():
         bot.reply_to(message,
-            "╭─「 ❌ *WRONG FORMAT* 」\n│\n│  `/profile <region> <uid>`\n│\n│  Example: `/profile ind 123456789`\n╰──────────────────────",
+            "╭─「 ❌ *WRONG FORMAT* 」\n│\n│  `/profile <region> <uid>`\n│\n│  Example: `/profile bd 123456789`\n╰──────────────────────",
             parse_mode="Markdown")
         return
 
@@ -593,7 +593,7 @@ def cmd_guild(message):
         return
     if len(args) != 3 or not args[1].isalpha() or not args[2].isdigit():
         bot.reply_to(message,
-            "╭─「 ❌ *WRONG FORMAT* 」\n│\n│  `/guild <region> <guild_id>`\n│\n│  Example: `/guild ind 3001234567`\n╰──────────────────────",
+            "╭─「 ❌ *WRONG FORMAT* 」\n│\n│  `/guild <region> <guild_id>`\n│\n│  Example: `/guild bd 3001234567`\n╰──────────────────────",
             parse_mode="Markdown")
         return
 
@@ -645,7 +645,7 @@ def cmd_rank(message):
         return
     if len(args) != 3 or not args[1].isalpha() or not args[2].isdigit():
         bot.reply_to(message,
-            "╭─「 ❌ *WRONG FORMAT* 」\n│\n│  `/rank <region> <uid>`\n│\n│  Example: `/rank ind 123456789`\n╰──────────────────────",
+            "╭─「 ❌ *WRONG FORMAT* 」\n│\n│  `/rank <region> <uid>`\n│\n│  Example: `/rank bd 123456789`\n╰──────────────────────",
             parse_mode="Markdown")
         return
 
