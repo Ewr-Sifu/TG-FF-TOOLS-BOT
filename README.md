@@ -134,7 +134,7 @@ python main.py
 
 <div align="center">
 
-**☠️ Made with 💀 by SIFAT**
+**☠️ Made with ❤️ by SIFAT**
 
 [![Channel](https://img.shields.io/badge/Telegram-@maybesifatx69-2CA5E0?style=for-the-badge&logo=telegram)](https://t.me/maybesifatx69)
 [![YouTube](https://img.shields.io/badge/YouTube-@maybes1fu-FF0000?style=for-the-badge&logo=youtube)](https://youtube.com/@maybes1fu)
