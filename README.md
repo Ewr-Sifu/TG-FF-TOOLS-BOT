@@ -1,6 +1,6 @@
 <div align="center">
   
-**🔥 FF LIKES BOT**
+**🔥 FF LIKE BOT**
 
 > **Free Fire players দের জন্য তৈরি একটি Telegram Bot**  
 > ☠️ Author: **SIFAT 💀** | 💬 [@MaybeSifu](https://t.me/MaybeSifu)
