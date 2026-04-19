@@ -25,13 +25,13 @@ if not BOT_TOKEN:
     logger.error("❌ BOT_TOKEN not found!")
     sys.exit(1)
 
-REQUIRED_CHANNELS = ["@maybesifatx69"]
+REQUIRED_CHANNELS = ["@sifat69backup"]
 GROUP_JOIN_LINK    = "https://t.me/maybesifatx69"
 OWNER_ID           = 8438269386
 OWNER_USERNAME     = "@MaybeSifu"
 YT_CHANNEL         = "https://youtube.com/@maybes1fu"
-BOT_NAME           = "FF LIKES BOT"
-BOT_VERSION        = "3.0"
+BOT_NAME           = "S1FAT LIKE BOT"
+BOT_VERSION        = "1.0"
 AUTHOR             = "SIFAT 💀"
 API_BASE           = "https://ff-like-info-by-sifu.vercel.app"
 
@@ -258,7 +258,7 @@ def cmd_start(message):
             f"│  Join our channel & subscribe\n"
             f"│  to unlock the bot.\n"
             f"│\n"
-            f"╰─ Tap below then send /start again",
+            f"╰─ Tap below then send /start 🐣",
             reply_markup=join_markup(), parse_mode="Markdown")
         return
 
@@ -269,18 +269,18 @@ def cmd_start(message):
     bot.reply_to(message,
         f"╭─「 🔥 *{BOT_NAME}* 」\n"
         f"│\n"
-        f"│  ✅ Welcome, *{name}!*\n"
+        f"│  😺 Welcome, *{name}!*\n"
         f"│\n"
-        f"│  🌺 *Author*   : {AUTHOR}\n"
-        f"│  🌺 *Version*  : v{BOT_VERSION}\n"
-        f"│  🌺 *Uptime*   : `{get_uptime()}`\n"
+        f"│  🗿 *Author*   : {AUTHOR}\n"
+        f"│  🤖 *Version*  : v{BOT_VERSION}\n"
+        f"│  ⚡ *Uptime*   : `{get_uptime()}`\n"
         f"│\n"
         f"│  ━━━━━━━━━━━━━━━━━━\n"
-        f"│  💰 *Points*    : `{pts_display}`\n"
-        f"│  ❤️ *Total Likes*: `{total_likes}`\n"
-        f"│  🔄 *Daily Reset*: `{reset_countdown()}`\n"
+        f"│  💰 Points    : `{pts_display}`\n"
+        f"│  ❤️ Total Likes: `{total_likes}`\n"
+        f"│  🔄 Daily Reset: `{reset_countdown()}`\n"
         f"│\n"
-        f"│  📌 `/like bd 123456789` (costs {LIKE_COST}pts)\n"
+        f"│  📌 `/like bd 3195799949` (costs {LIKE_COST}pts)\n"
         f"│  🎁 `/daily` to claim free points!\n"
         f"│\n"
         f"╰─ ☠️ {AUTHOR}",
@@ -313,9 +313,9 @@ def cmd_help(message):
 
     text = (
         f"╭─「 🤖 *{BOT_NAME}* 」\n"
-        f"│  ☠️ *Author*   : {AUTHOR}\n"
-        f"│  📌 *Version*  : v{BOT_VERSION}\n"
-        f"│  📦 *Commands* : {TOTAL_COMMANDS}+\n"
+        f"│  ☠️ Author   : {AUTHOR}\n"
+        f"│  📌 Version  : v{BOT_VERSION}\n"
+        f"│  📦 Commands : {TOTAL_COMMANDS}+\n"
         f"╰──────────────────────\n"
         "\n`╭─「 🎮 FREE FIRE TOOLS 」`\n"
         "`├⊙` `/like`      `├⊙` `/info`\n"
@@ -331,10 +331,10 @@ def cmd_help(message):
         "`├⊙` `/servertime``├⊙` `/about`\n"
         "`╰──────────────────────`\n"
         f"{owner_section}\n"
-        f"\n💰 *Like costs* `{LIKE_COST} pts` | *Visit costs* `{VISIT_COST} pts`\n"
-        f"🎁 *Daily reward* `{DAILY_REWARD} pts` | *Verify bonus* `{VERIFY_REWARD} pts`\n\n"
-        f"🌍 *Regions:* `bd` `ind` `sg` `br` `ru` `us` `th` `id`\n"
-        f"📌 *Example:* `/like bd 123456789`\n\n"
+        f"\n💰 Like costs `{LIKE_COST} pts` | *Visit costs* `{VISIT_COST} pts`\n"
+        f"🎁 Daily reward `{DAILY_REWARD} pts` | *Verify bonus* `{VERIFY_REWARD} pts`\n\n"
+        f"🌍 Regions: `bd` `ind` `sg` `br` `ru` `us` `th` `id`\n"
+        f"📌 Example: `/like bd 3195799949`\n\n"
         f"💬 Support: {OWNER_USERNAME}"
     )
     bot.reply_to(message, text, reply_markup=help_markup(), parse_mode="Markdown")
@@ -383,7 +383,7 @@ def cmd_daily(message):
 
     if cd:
         bot.reply_to(message,
-            f"╭─「 ⏳ *DAILY COOLDOWN* 」\n"
+            f"╭─「 ⏳ DAILY COOLDOWN 」\n"
             f"│\n"
             f"│  You already claimed today!\n"
             f"│\n"
@@ -406,12 +406,12 @@ def cmd_daily(message):
     )
 
     bot.reply_to(message,
-        f"╭─「 🎁 *DAILY REWARD CLAIMED!* 」\n"
+        f"╭─「 🎁 REWARD CLAIMED! 」\n"
         f"│\n"
-        f"│  ✅ *+{DAILY_REWARD} Points* added!\n"
+        f"│  ✅ +{DAILY_REWARD} Points added!\n"
         f"│\n"
-        f"│  💰 *New Balance* : `{new_bal} pts`\n"
-        f"│  ❤️ *Total Likes* : `{total_likes}`\n"
+        f"│  💰 New Balance : `{new_bal} pts`\n"
+        f"│  ❤️ Total Likes : `{total_likes}`\n"
         f"│\n"
         f"│  💡 Use `/like bd <uid>` to spend\n"
         f"│     your points! (costs {LIKE_COST} pts)\n"
@@ -438,7 +438,7 @@ def cmd_verify(message):
 
     if cd:
         bot.reply_to(message,
-            f"╭─「 ⏳ *VERIFY COOLDOWN* 」\n"
+            f"╭─「 ⏳ VERIFY COOLDOWN 」\n"
             f"│\n"
             f"│  Already verified today!\n"
             f"│\n"
@@ -451,7 +451,7 @@ def cmd_verify(message):
 
     if not is_member(uid):
         bot.reply_to(message,
-            f"╭─「 ❌ *VERIFY FAILED* 」\n"
+            f"╭─「 ❌ VERIFY FAILED 」\n"
             f"│\n"
             f"│  You left our channel!\n"
             f"│  Re-join to verify and\n"
@@ -472,12 +472,12 @@ def cmd_verify(message):
     )
 
     bot.reply_to(message,
-        f"╭─「 ✅ *VERIFIED!* 」\n"
+        f"╭─「 ✅ VERIFIED! 」\n"
         f"│\n"
         f"│  Channel membership confirmed!\n"
-        f"│  ✨ *+{VERIFY_REWARD} Bonus Points* added!\n"
+        f"│  ✨ +{VERIFY_REWARD} Bonus Points added!\n"
         f"│\n"
-        f"│  💰 *New Balance* : `{new_bal} pts`\n"
+        f"│  💰 New Balance : `{new_bal} pts`\n"
         f"│\n"
         f"│  🎁 Also claim `/daily` for\n"
         f"│     +{DAILY_REWARD} more points!\n"
@@ -520,22 +520,22 @@ def cmd_balance(message):
     )
 
     bot.reply_to(message,
-        f"╭─「 💰 *YOUR BALANCE* 」\n"
+        f"╭─「 💰 YOUR BALANCE 」\n"
         f"│\n"
-        f"│  👤 *User ID*      : `{uid}`\n"
-        f"│\n"
-        f"│  ━━━━━━━━━━━━━━━━━━\n"
-        f"│  💰 *Points*       : `{pts_display}`\n"
-        f"│  ❤️ *Can Send Like*: {can_like}\n"
+        f"│  👤 User ID      : `{uid}`\n"
         f"│\n"
         f"│  ━━━━━━━━━━━━━━━━━━\n"
-        f"│  📊 *All-Time Likes* : `{total_likes}`\n"
-        f"│  📅 *Monthly Likes*  : `{m_likes}`\n"
-        f"│  👁️ *Total Visits*   : `{total_visits}`\n"
+        f"│  💰 Points       : `{pts_display}`\n"
+        f"│  ❤️ Can Send Like: {can_like}\n"
         f"│\n"
         f"│  ━━━━━━━━━━━━━━━━━━\n"
-        f"│  🎁 *Daily*  : {daily_str}\n"
-        f"│  ✅ *Verify* : {verify_str}\n"
+        f"│  📊 All-Time Likes : `{total_likes}`\n"
+        f"│  📅 Monthly Likes  : `{m_likes}`\n"
+        f"│  👁️ Total Visits   : `{total_visits}`\n"
+        f"│\n"
+        f"│  ━━━━━━━━━━━━━━━━━━\n"
+        f"│  🎁 Daily  : {daily_str}\n"
+        f"│  ✅ Verify : {verify_str}\n"
         f"│\n"
         f"╰─ ☠️ {AUTHOR}",
         reply_markup=mu, parse_mode="Markdown")
@@ -562,8 +562,8 @@ def cmd_leaderboard(message):
     medals = ["🥇", "🥈", "🥉", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
 
     lines = [
-        f"╭─「 🏆 *MONTHLY LEADERBOARD* 」\n"
-        f"│  📅 *{month_str}*\n"
+        f"╭─「 🏆 MONTHLY LEADERBOARD 」\n"
+        f"│  📅 {month_str}\n"
         f"│\n"
         f"│  ━━━━━━━━━━━━━━━━━━"
     ]
@@ -573,7 +573,7 @@ def cmd_leaderboard(message):
     else:
         for i, (u_id, count) in enumerate(board):
             medal = medals[i] if i < len(medals) else f"{i+1}."
-            marker = " 👈 *You*" if u_id == uid else ""
+            marker = " 👈 You" if u_id == uid else ""
             lines.append(f"│  {medal} `{u_id}` ➜ `{count}` likes{marker}")
 
     user_rank = None
@@ -584,7 +584,7 @@ def cmd_leaderboard(message):
 
     lines.append(f"│  ━━━━━━━━━━━━━━━━━━")
     if user_rank:
-        lines.append(f"│  📍 *Your Rank* : `#{user_rank}` | Likes: `{monthly_likes.get(uid, 0)}`")
+        lines.append(f"│  📍 Your Rank : `#{user_rank}` | Likes: `{monthly_likes.get(uid, 0)}`")
     lines.append(f"╰─ 🔄 Resets on 1st of each month")
 
     mu = InlineKeyboardMarkup()
@@ -617,16 +617,16 @@ def cmd_status(message):
     bar       = "🟩" * filled + "⬜" * (bar_size - filled)
 
     bot.reply_to(message,
-        f"╭─「 📊 *YOUR STATUS* 」\n"
+        f"╭─「 📊 YOUR STATUS 」\n"
         f"│\n"
-        f"│  👤 *User ID*     : `{uid}`\n"
+        f"│  👤 User ID     : `{uid}`\n"
         f"│\n"
-        f"│  💰 *Points*      : `{pts_display}`\n"
-        f"│  ❤️ *Likes left*  : `{likes_can}`\n"
+        f"│  💰 Points      : `{pts_display}`\n"
+        f"│  ❤️ Likes left  : `{likes_can}`\n"
         f"│\n"
         f"│  {bar}\n"
         f"│\n"
-        f"│  🔄 *Daily reset* : `{reset_countdown()}`\n"
+        f"│  🔄 Daily reset : `{reset_countdown()}`\n"
         f"│\n"
         f"╰─ 💬 {OWNER_USERNAME}",
         parse_mode="Markdown")
@@ -640,11 +640,11 @@ def cmd_servertime(message):
     broadcast_log.add(message.from_user.id)
     now = datetime.utcnow()
     bot.reply_to(message,
-        f"╭─「 🕐 *SERVER TIME* 」\n"
+        f"╭─「 🕐 SERVER TIME 」\n"
         f"│\n"
-        f"│  🌐 *UTC Time*   : `{now.strftime('%Y-%m-%d %H:%M:%S')}`\n"
-        f"│  ⏱️ *Uptime*     : `{get_uptime()}`\n"
-        f"│  🔄 *Next Reset* : `{reset_countdown()}`\n"
+        f"│  🌐 UTC Time   : `{now.strftime('%Y-%m-%d %H:%M:%S')}`\n"
+        f"│  ⏱️ Uptime     : `{get_uptime()}`\n"
+        f"│  🔄 Next Reset : `{reset_countdown()}`\n"
         f"│\n"
         f"╰──────────────────────",
         parse_mode="Markdown")
@@ -657,13 +657,13 @@ def cmd_servertime(message):
 def cmd_about(message):
     broadcast_log.add(message.from_user.id)
     bot.reply_to(message,
-        f"╭─「 ℹ️ *ABOUT BOT* 」\n"
+        f"╭─「 ℹ️ ABOUT BOT 」\n"
         f"│\n"
-        f"│  🤖 *Bot*      : {BOT_NAME}\n"
-        f"│  ☠️ *Author*   : {AUTHOR}\n"
-        f"│  📌 *Version*  : v{BOT_VERSION}\n"
-        f"│  💬 *Contact*  : {OWNER_USERNAME}\n"
-        f"│  ⏱️ *Uptime*   : `{get_uptime()}`\n"
+        f"│  🤖 Bot      : {BOT_NAME}\n"
+        f"│  ☠️ Author   : {AUTHOR}\n"
+        f"│  📌 Version  : v{BOT_VERSION}\n"
+        f"│  💬 Contact  : {OWNER_USERNAME}\n"
+        f"│  ⏱️ Uptime   : `{get_uptime()}`\n"
         f"│\n"
         f"│  Built for Free Fire players.\n"
         f"│  Send likes, check profiles,\n"
@@ -690,12 +690,12 @@ def cmd_like(message):
         mu = InlineKeyboardMarkup()
         mu.add(InlineKeyboardButton("💬  Official Group", url=GROUP_JOIN_LINK))
         bot.reply_to(message,
-            "╭─「 ⚠️ *GROUP ONLY* 」\n"
+            "╭─「 ⚠️ GROUP ONLY 」\n"
             "│\n"
             "│  This command only works\n"
             "│  inside a group chat.\n"
             "│\n"
-            "╰─ Join the group below 👇",
+            "╰─ Join the group 👇",
             reply_markup=mu, parse_mode="Markdown")
         return
 
@@ -705,12 +705,12 @@ def cmd_like(message):
 
     if len(args) != 3:
         bot.reply_to(message,
-            "╭─「 ❌ *WRONG FORMAT* 」\n"
+            "╭─「 ❌ WRONG FORMAT 」\n"
             "│\n"
             "│  `/like <region> <uid>`\n"
             "│\n"
             "│  🌍 Example:\n"
-            "│  `/like bd 123456789`\n"
+            "│  `/like bd 3195799949`\n"
             "│\n"
             f"│  💰 Costs: `{LIKE_COST} points`\n"
             "╰──────────────────────",
@@ -719,7 +719,7 @@ def cmd_like(message):
 
     region, target_uid = args[1].lower(), args[2]
     if not region.isalpha() or not target_uid.isdigit():
-        bot.reply_to(message, "⚠️ Region = letters only, UID = numbers only.\nExample: `/like bd 123456789`", parse_mode="Markdown")
+        bot.reply_to(message, "⚠️ Region = letters only, UID = numbers only.\nExample: `/like bd 3195799949`", parse_mode="Markdown")
         return
 
     threading.Thread(target=_process_like, args=(message, region, target_uid)).start()
@@ -735,12 +735,12 @@ def _process_like(message, region, target_uid):
             InlineKeyboardButton("✅  Verify",        callback_data="verify_remind"),
         )
         bot.reply_to(message,
-            f"╭─「 💸 *INSUFFICIENT POINTS* 」\n"
+            f"╭─「 💸 INSUFFICIENT POINTS 」\n"
             f"│\n"
             f"│  You need `{LIKE_COST} pts` to send a like.\n"
             f"│  You have `{pts} pts`.\n"
             f"│\n"
-            f"│  💡 *Earn points:*\n"
+            f"│  💡 Earn points:\n"
             f"│  🎁 `/daily`  → +{DAILY_REWARD} pts\n"
             f"│  ✅ `/verify` → +{VERIFY_REWARD} pts\n"
             f"│\n"
@@ -749,7 +749,7 @@ def _process_like(message, region, target_uid):
         return
 
     wait_msg = bot.reply_to(message,
-        f"╭─「 ⏳ *PROCESSING...* 」\n"
+        f"╭─「 ⏳ PROCESSING... 」\n"
         f"│\n"
         f"│  🔍 UID    : `{target_uid}`\n"
         f"│  🌍 Region : `{region.upper()}`\n"
@@ -763,7 +763,7 @@ def _process_like(message, region, target_uid):
     if "error" in resp:
         add_points(uid, LIKE_COST)  # refund on API error
         _edit(wait_msg,
-            f"╭─「 ❌ *API ERROR* 」\n"
+            f"╭─「 ❌ API ERROR 」\n"
             f"│\n"
             f"│  ⚠️ `{resp['error']}`\n"
             f"│  💰 Points refunded!\n"
@@ -774,7 +774,7 @@ def _process_like(message, region, target_uid):
     if not isinstance(resp, dict) or resp.get("status") != 1:
         add_points(uid, LIKE_COST)  # refund on failed like
         _edit(wait_msg,
-            f"╭─「 ❌ *REQUEST FAILED* 」\n"
+            f"╭─「 ❌ REQUEST FAILED 」\n"
             f"│\n"
             f"│  UID has max likes for today.\n"
             f"│  💰 Points refunded!\n"
@@ -801,18 +801,18 @@ def _process_like(message, region, target_uid):
         _edit(wait_msg,
             f"╭─「 ✅ *LIKES SENT!* 」\n"
             f"│\n"
-            f"│  👤 *Name*    : `{p_name}`\n"
-            f"│  🆔 *UID*     : `{p_uid}`\n"
-            f"│  🌍 *Region*  : `{p_region}`\n"
+            f"│  👤 Name    : `{p_name}`\n"
+            f"│  🆔 UID     : `{p_uid}`\n"
+            f"│  🌍 Region  : `{p_region}`\n"
             f"│\n"
             f"│  ━━━━━━━━━━━━━━━━━━\n"
-            f"│  💔 *Before*  : `{l_before}`\n"
-            f"│  📈 *Added*   : `+{l_given}`\n"
-            f"│  💖 *Total*   : `{l_after}`\n"
+            f"│  💔 Before  : `{l_before}`\n"
+            f"│  📈 Added   : `+{l_given}`\n"
+            f"│  💖 Total   : `{l_after}`\n"
             f"│  ━━━━━━━━━━━━━━━━━━\n"
             f"│\n"
-            f"│  💰 *Points Left* : `{new_bal}`\n"
-            f"│  ❤️ *Total Likes* : `{likes_sent_total.get(uid, 0)}`\n"
+            f"│  💰 Points Left : `{new_bal}`\n"
+            f"│  ❤️ Total Likes : `{likes_sent_total.get(uid, 0)}`\n"
             f"│\n"
             f"╰─ ☠️ {AUTHOR}",
             markup=result_markup())
@@ -831,16 +831,16 @@ def cmd_info(message):
     broadcast_log.add(uid)
 
     if uid in banned_users:
-        bot.reply_to(message, "🚫 *You are banned.*", parse_mode="Markdown")
+        bot.reply_to(message, "🚫 You are banned.", parse_mode="Markdown")
         return
     if not is_member(uid):
-        bot.reply_to(message, "❌ *Join our channel first!*", reply_markup=join_markup(), parse_mode="Markdown")
+        bot.reply_to(message, "❌ Join our channel first!", reply_markup=join_markup(), parse_mode="Markdown")
         return
     if len(args) != 3 or not args[1].isalpha() or not args[2].isdigit():
         bot.reply_to(message,
-            "╭─「 ❌ *WRONG FORMAT* 」\n│\n"
+            "╭─「 ❌ WRONG FORMAT 」\n│\n"
             "│  `/info <region> <uid>`\n│\n"
-            "│  Example: `/info bd 123456789`\n"
+            "│  Example: `/info bd 3195799949`\n"
             "╰──────────────────────",
             parse_mode="Markdown")
         return
@@ -850,7 +850,7 @@ def cmd_info(message):
     resp = api_get("info", {"uid": target_uid, "server_name": region})
 
     if "error" in resp:
-        _edit(wait, f"╭─「 ❌ *API ERROR* 」\n│\n│  ⚠️ `{resp['error']}`\n╰─ 💬 {OWNER_USERNAME}")
+        _edit(wait, f"╭─「 ❌ API ERROR 」\n│\n│  ⚠️ `{resp['error']}`\n╰─ 💬 {OWNER_USERNAME}")
         return
 
     try:
@@ -870,21 +870,21 @@ def cmd_info(message):
         )
 
         _edit(wait,
-            f"╭─「 🎮 *PLAYER INFO* 」\n"
+            f"╭─「 🎮 PLAYER INFO 」\n"
             f"│\n"
-            f"│  👤 *Name*    : `{name}`\n"
-            f"│  🆔 *UID*     : `{target_uid}`\n"
-            f"│  🌍 *Region*  : `{reg}`\n"
-            f"│\n"
-            f"│  ━━━━━━━━━━━━━━━━━━\n"
-            f"│  ⚔️ *Level*   : `{level}`\n"
-            f"│  ✨ *EXP*     : `{exp}`\n"
-            f"│  ❤️ *Likes*   : `{likes}`\n"
+            f"│  👤 Name    : `{name}`\n"
+            f"│  🆔 UID     : `{target_uid}`\n"
+            f"│  🌍 Region  : `{reg}`\n"
             f"│\n"
             f"│  ━━━━━━━━━━━━━━━━━━\n"
-            f"│  🏆 *BR Rank* : `{br_rank}`\n"
-            f"│  🔫 *CS Rank* : `{cs_rank}`\n"
-            f"│  🏰 *Guild*   : `{guild}`\n"
+            f"│  ⚔️ Level   : `{level}`\n"
+            f"│  ✨ EXP     : `{exp}`\n"
+            f"│  ❤️ Likes   : `{likes}`\n"
+            f"│\n"
+            f"│  ━━━━━━━━━━━━━━━━━━\n"
+            f"│  🏆 BR Rank : `{br_rank}`\n"
+            f"│  🔫 CS Rank : `{cs_rank}`\n"
+            f"│  🏰 Guild   : `{guild}`\n"
             f"│\n"
             f"╰─ ☠️ {AUTHOR}",
             markup=mu)
@@ -910,10 +910,10 @@ def cmd_visit(message):
         return
     if len(args) != 3 or not args[1].isalpha() or not args[2].isdigit():
         bot.reply_to(message,
-            "╭─「 ❌ *WRONG FORMAT* 」\n│\n"
+            "╭─「 ❌ WRONG FORMAT 」\n│\n"
             "│  `/visit <region> <uid>`\n│\n"
             f"│  💰 Costs: `{VISIT_COST} points`\n│\n"
-            "│  Example: `/visit bd 123456789`\n"
+            "│  Example: `/visit bd 3195799949`\n"
             "╰──────────────────────",
             parse_mode="Markdown")
         return
@@ -927,7 +927,7 @@ def _process_visit(message, region, target_uid):
     if not spend_points(uid, VISIT_COST):
         pts = get_points(uid)
         bot.reply_to(message,
-            f"╭─「 💸 *INSUFFICIENT POINTS* 」\n"
+            f"╭─「 💸 INSUFFICIENT POINTS 」\n"
             f"│\n"
             f"│  Need `{VISIT_COST} pts` to send a visit.\n"
             f"│  You have `{pts} pts`.\n"
@@ -940,7 +940,7 @@ def _process_visit(message, region, target_uid):
         return
 
     wait = bot.reply_to(message,
-        f"╭─「 ⏳ *SENDING VISIT...* 」\n"
+        f"╭─「 ⏳ SENDING VISIT... 」\n"
         f"│\n"
         f"│  🔍 UID    : `{target_uid}`\n"
         f"│  🌍 Region : `{region.upper()}`\n"
@@ -953,7 +953,7 @@ def _process_visit(message, region, target_uid):
     if "error" in resp:
         add_points(uid, VISIT_COST)  # refund
         _edit(wait,
-            f"╭─「 ❌ *API ERROR* 」\n│\n│  ⚠️ `{resp['error']}`\n│  💰 Points refunded!\n╰─ 💬 {OWNER_USERNAME}")
+            f"╭─「 ❌ API ERROR 」\n│\n│  ⚠️ `{resp['error']}`\n│  💰 Points refunded!\n╰─ 💬 {OWNER_USERNAME}")
         return
 
     try:
@@ -962,14 +962,14 @@ def _process_visit(message, region, target_uid):
         visits_sent_total[uid] = visits_sent_total.get(uid, 0) + 1
 
         _edit(wait,
-            f"╭─「 ✅ *VISIT SENT!* 」\n"
+            f"╭─「 ✅ VISIT SENT! 」\n"
             f"│\n"
-            f"│  👤 *Name*    : `{p_name}`\n"
-            f"│  🆔 *UID*     : `{target_uid}`\n"
-            f"│  🌍 *Region*  : `{p_region}`\n"
+            f"│  👤 Name    : `{p_name}`\n"
+            f"│  🆔 UID     : `{target_uid}`\n"
+            f"│  🌍 Region  : `{p_region}`\n"
             f"│\n"
-            f"│  💰 *Points Left*    : `{get_points(uid)}`\n"
-            f"│  👁️ *Total Visits*   : `{visits_sent_total.get(uid, 0)}`\n"
+            f"│  💰 Points Left    : `{get_points(uid)}`\n"
+            f"│  👁️ Total Visits   : `{visits_sent_total.get(uid, 0)}`\n"
             f"│\n"
             f"╰─ ☠️ {AUTHOR}")
     except Exception as e:
@@ -994,7 +994,7 @@ def cmd_profile(message):
         return
     if len(args) != 3 or not args[1].isalpha() or not args[2].isdigit():
         bot.reply_to(message,
-            "╭─「 ❌ *WRONG FORMAT* 」\n│\n│  `/profile <region> <uid>`\n│\n│  Example: `/profile bd 123456789`\n╰──────────────────────",
+            "╭─「 ❌ WRONG FORMAT 」\n│\n│  `/profile <region> <uid>`\n│\n│  Example: `/profile bd 123456789`\n╰──────────────────────",
             parse_mode="Markdown")
         return
 
@@ -1003,7 +1003,7 @@ def cmd_profile(message):
     resp = api_get("playerinfo", {"uid": target_uid, "server_name": region})
 
     if "error" in resp:
-        _edit(wait, f"╭─「 ❌ *API ERROR* 」\n│\n│  ⚠️ `{resp['error']}`\n╰─ 💬 {OWNER_USERNAME}")
+        _edit(wait, f"╭─「 ❌ API ERROR 」\n│\n│  ⚠️ `{resp['error']}`\n╰─ 💬 {OWNER_USERNAME}")
         return
 
     try:
@@ -1015,15 +1015,15 @@ def cmd_profile(message):
         reg    = resp.get("Region") or region.upper()
 
         _edit(wait,
-            f"╭─「 👤 *PLAYER PROFILE* 」\n"
+            f"╭─「 👤 PLAYER PROFILE 」\n"
             f"│\n"
-            f"│  👤 *Name*   : `{name}`\n"
-            f"│  🆔 *UID*    : `{target_uid}`\n"
-            f"│  🌍 *Region* : `{reg}`\n"
-            f"│  ⚔️ *Level*  : `{level}`\n"
-            f"│  ❤️ *Likes*  : `{likes}`\n"
-            f"│  🏆 *Rank*   : `{rank}`\n"
-            f"│  🏰 *Guild*  : `{guild}`\n"
+            f"│  👤 Name   : `{name}`\n"
+            f"│  🆔 UID    : `{target_uid}`\n"
+            f"│  🌍 Region : `{reg}`\n"
+            f"│  ⚔️ Level  : `{level}`\n"
+            f"│  ❤️ Likes  : `{likes}`\n"
+            f"│  🏆 Rank   : `{rank}`\n"
+            f"│  🏰 Guild  : `{guild}`\n"
             f"│\n"
             f"╰─ ☠️ {AUTHOR}")
     except Exception as e:
@@ -1048,7 +1048,7 @@ def cmd_guild(message):
         return
     if len(args) != 3 or not args[1].isalpha() or not args[2].isdigit():
         bot.reply_to(message,
-            "╭─「 ❌ *WRONG FORMAT* 」\n│\n│  `/guild <region> <guild_id>`\n│\n│  Example: `/guild bd 3001234567`\n╰──────────────────────",
+            "╭─「 ❌ WRONG FORMAT 」\n│\n│  `/guild <region> <guild_id>`\n│\n│  Example: `/guild bd 3001234567`\n╰──────────────────────",
             parse_mode="Markdown")
         return
 
@@ -1057,7 +1057,7 @@ def cmd_guild(message):
     resp = api_get("guild", {"id": guild_id, "server_name": region})
 
     if "error" in resp:
-        _edit(wait, f"╭─「 ❌ *API ERROR* 」\n│\n│  ⚠️ `{resp['error']}`\n╰─ 💬 {OWNER_USERNAME}")
+        _edit(wait, f"╭─「 ❌ API ERROR 」\n│\n│  ⚠️ `{resp['error']}`\n╰─ 💬 {OWNER_USERNAME}")
         return
 
     try:
@@ -1069,15 +1069,15 @@ def cmd_guild(message):
         g_score  = resp.get("GuildScore") or resp.get("score", "N/A")
 
         _edit(wait,
-            f"╭─「 🏰 *GUILD INFO* 」\n"
+            f"╭─「 🏰 GUILD INFO 」\n"
             f"│\n"
-            f"│  🆔 *Guild ID* : `{guild_id}`\n"
-            f"│  🏰 *Name*     : `{g_name}`\n"
-            f"│  🌍 *Region*   : `{region.upper()}`\n"
-            f"│  ⭐ *Level*    : `{g_level}`\n"
-            f"│  👥 *Members*  : `{g_mem}/{g_cap}`\n"
-            f"│  👑 *Leader*   : `{g_leader}`\n"
-            f"│  🏆 *Score*    : `{g_score}`\n"
+            f"│  🆔 Guild ID : `{guild_id}`\n"
+            f"│  🏰 Name     : `{g_name}`\n"
+            f"│  🌍 Region   : `{region.upper()}`\n"
+            f"│  ⭐ Level    : `{g_level}`\n"
+            f"│  👥 Members  : `{g_mem}/{g_cap}`\n"
+            f"│  👑 Leader   : `{g_leader}`\n"
+            f"│  🏆 Score    : `{g_score}`\n"
             f"│\n"
             f"╰─ ☠️ {AUTHOR}")
     except Exception as e:
@@ -1102,7 +1102,7 @@ def cmd_rank(message):
         return
     if len(args) != 3 or not args[1].isalpha() or not args[2].isdigit():
         bot.reply_to(message,
-            "╭─「 ❌ *WRONG FORMAT* 」\n│\n│  `/rank <region> <uid>`\n│\n│  Example: `/rank bd 123456789`\n╰──────────────────────",
+            "╭─「 ❌ WRONG FORMAT 」\n│\n│  `/rank <region> <uid>`\n│\n│  Example: `/rank bd 123456789`\n╰──────────────────────",
             parse_mode="Markdown")
         return
 
@@ -1122,17 +1122,17 @@ def cmd_rank(message):
         cs_points = resp.get("CSRankPoints") or resp.get("csPoints", "N/A")
 
         _edit(wait,
-            f"╭─「 🏆 *RANK INFO* 」\n"
+            f"╭─「 🏆 RANK INFO 」\n"
             f"│\n"
-            f"│  👤 *Name*      : `{name}`\n"
-            f"│  🆔 *UID*       : `{target_uid}`\n"
-            f"│  🌍 *Region*    : `{region.upper()}`\n"
+            f"│  👤 Name      : `{name}`\n"
+            f"│  🆔 UID       : `{target_uid}`\n"
+            f"│  🌍 Region    : `{region.upper()}`\n"
             f"│\n"
             f"│  ━━━━━━━━━━━━━━━━━━\n"
-            f"│  🎯 *BR Rank*   : `{br_rank}`\n"
-            f"│  📊 *BR Points* : `{br_points}`\n"
-            f"│  🔫 *CS Rank*   : `{cs_rank}`\n"
-            f"│  📊 *CS Points* : `{cs_points}`\n"
+            f"│  🎯 BR Rank   : `{br_rank}`\n"
+            f"│  📊 BR Points : `{br_points}`\n"
+            f"│  🔫 CS Rank   : `{cs_rank}`\n"
+            f"│  📊 CS Points : `{cs_points}`\n"
             f"│\n"
             f"╰─ ☠️ {AUTHOR}")
     except Exception as e:
@@ -1149,9 +1149,9 @@ def cmd_remain(message):
         return
     total = len(points_balance)
     lines = [
-        f"╭─「 📊 *USAGE STATS* 」\n"
-        f"│  👥 *Users with points*: `{total}`\n"
-        f"│  ⏱️ *Uptime*            : `{get_uptime()}`\n"
+        f"╭─「 📊 USAGE STATS 」\n"
+        f"│  👥 Users with points: `{total}`\n"
+        f"│  ⏱️ Uptime           : `{get_uptime()}`\n"
         f"│\n"
         f"│  ━━━━━━━━━━━━━━━━━━"
     ]
@@ -1170,12 +1170,12 @@ def cmd_users(message):
     if message.from_user.id != OWNER_ID:
         return
     bot.reply_to(message,
-        f"╭─「 👥 *USER STATS* 」\n"
+        f"╭─「 👥 USER STATS 」\n"
         f"│\n"
-        f"│  🗂️ *Known users*   : `{len(broadcast_log)}`\n"
-        f"│  💰 *Have points*   : `{len(points_balance)}`\n"
-        f"│  🚫 *Banned*        : `{len(banned_users)}`\n"
-        f"│  🏆 *On leaderboard*: `{len(monthly_likes)}`\n"
+        f"│  🗂️ Known users   : `{len(broadcast_log)}`\n"
+        f"│  💰 Have points   : `{len(points_balance)}`\n"
+        f"│  🚫 Banned        : `{len(banned_users)}`\n"
+        f"│  🏆 On leaderboard: `{len(monthly_likes)}`\n"
         f"│\n"
         f"╰──────────────────────",
         parse_mode="Markdown")
@@ -1219,7 +1219,7 @@ def cmd_addpoints(message):
     add_points(target, amount)
     new_bal = get_points(target)
     bot.reply_to(message,
-        f"╭─「 ✅ *POINTS ADDED* 」\n"
+        f"╭─「 ✅ POINTS ADDED 」\n"
         f"│\n"
         f"│  👤 User   : `{target}`\n"
         f"│  ➕ Added  : `{amount} pts`\n"
@@ -1229,10 +1229,10 @@ def cmd_addpoints(message):
         parse_mode="Markdown")
     try:
         bot.send_message(target,
-            f"╭─「 🎁 *POINTS RECEIVED!* 」\n"
+            f"╭─「 🎁 POINTS RECEIVED! 」\n"
             f"│\n"
             f"│  👑 Admin sent you `{amount}` pts!\n"
-            f"│  💰 *New Balance* : `{new_bal} pts`\n"
+            f"│  💰 New Balance : `{new_bal} pts`\n"
             f"│\n"
             f"╰─ ☠️ {AUTHOR}",
             parse_mode="Markdown")
@@ -1251,7 +1251,7 @@ def cmd_broadcast(message):
 
     text     = args[1].strip()
     full_msg = (
-        f"📢 *ANNOUNCEMENT*\n"
+        f"📢 ANNOUNCEMENT\n"
         f"━━━━━━━━━━━━━━━━━━\n\n"
         f"{text}\n\n"
         f"━━━━━━━━━━━━━━━━━━\n"
@@ -1271,11 +1271,11 @@ def cmd_broadcast(message):
         time.sleep(0.05)
 
     bot.edit_message_text(
-        f"╭─「 📡 *BROADCAST DONE* 」\n"
+        f"╭─「 📡 BROADCAST DONE 」\n"
         f"│\n"
-        f"│  ✅ *Sent*   : `{sent_ok}`\n"
-        f"│  ❌ *Failed* : `{sent_fail}`\n"
-        f"│  👥 *Total*  : `{len(targets)}`\n"
+        f"│  ✅ Sent   : `{sent_ok}`\n"
+        f"│  ❌ Failed : `{sent_fail}`\n"
+        f"│  👥 Total  : `{len(targets)}`\n"
         f"│\n"
         f"╰──────────────────────",
         chat_id=status.chat.id, message_id=status.message_id, parse_mode="Markdown")
@@ -1293,7 +1293,7 @@ def on_callback(call):
         t0 = time.time()
         ms = round((time.time() - t0) * 1000 + 12)
         bot.send_message(call.message.chat.id,
-            f"╭─「 🏓 *PONG!* 」\n│\n│  ⚡ `{ms}ms` | ⏱️ `{get_uptime()}`\n│  🟢 Online | 🤖 v{BOT_VERSION}\n╰──────────────────────",
+            f"╭─「 🏓 PONG! 」\n│\n│  ⚡ `{ms}ms` | ⏱️ `{get_uptime()}`\n│  🟢 Online | 🤖 v{BOT_VERSION}\n╰──────────────────────",
             parse_mode="Markdown")
 
     elif call.data == "balance":
@@ -1302,12 +1302,12 @@ def on_callback(call):
         total_likes = likes_sent_total.get(uid, 0)
         m_likes     = monthly_likes.get(uid, 0)
         bot.send_message(call.message.chat.id,
-            f"╭─「 💰 *YOUR BALANCE* 」\n"
+            f"╭─「 💰 YOUR BALANCE 」\n"
             f"│\n"
-            f"│  💰 *Points*       : `{pts_display}`\n"
-            f"│  ❤️ *Total Likes*  : `{total_likes}`\n"
-            f"│  📅 *Monthly Likes*: `{m_likes}`\n"
-            f"│  🔄 *Reset in*     : `{reset_countdown()}`\n"
+            f"│  💰 Points       : `{pts_display}`\n"
+            f"│  ❤️ Total Likes  : `{total_likes}`\n"
+            f"│  📅 Monthly Likes: `{m_likes}`\n"
+            f"│  🔄 Reset in     : `{reset_countdown()}`\n"
             f"│\n"
             f"╰─ 🎁 `/daily` to earn more!",
             parse_mode="Markdown")
@@ -1316,7 +1316,7 @@ def on_callback(call):
         board = sorted(monthly_likes.items(), key=lambda x: x[1], reverse=True)[:5]
         medals = ["🥇", "🥈", "🥉", "4️⃣", "5️⃣"]
         now    = datetime.utcnow()
-        lines  = [f"╭─「 🏆 *TOP 5 — {now.strftime('%B')}* 」\n│"]
+        lines  = [f"╭─「 🏆 TOP 5 — {now.strftime('%B')} 」\n│"]
         if not board:
             lines.append("│  ❌ No entries yet.")
         else:
