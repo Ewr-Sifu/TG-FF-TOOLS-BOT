@@ -1,94 +1,142 @@
-# Free Fire Likes Bot 🎮
+# 🔥 FF LIKES BOT
 
-A powerful Telegram bot designed to send likes to **Garena Free Fire** profiles using a UID and Server Name. Built with **Telebot (pyTelegramBotAPI)** and **Flask**, supporting both **Webhook** and **Polling** modes for high performance and reliability.
-
----
-
-## 🌟 Features
-- **Instant Likes**: Send likes to any Free Fire UID globally.
-- **Verification System**: Ensures users are subscribed to required channels before using the bot.
-- **Usage Tracking**: In-memory tracking of daily limits for users.
-- **Dual Mode**: Seamlessly switches between Webhook (for production) and Polling (for development).
-- **Owner Dashboard**: `/remain` command for the owner to monitor user statistics.
-- **Threaded Processing**: Non-blocking API calls for a smooth user experience.
+> **Free Fire players দের জন্য তৈরি একটি Telegram Bot**  
+> ☠️ Author: **SIFAT 💀** | 💬 [@MaybeSifu](https://t.me/MaybeSifu)
 
 ---
 
-## 🤖 BOT Demo  
+## ✨ Features
 
-Try this bot directly on Telegram:  
+### 🎮 Free Fire Tools
+| Command | কাজ |
+|---|---|
+| `/like <region> <uid>` | Free Fire প্রোফাইলে Likes পাঠাও |
+| `/visit <region> <uid>` | প্রোফাইলে Visit পাঠাও |
+| `/info <region> <uid>` | Player এর সব তথ্য দেখো |
+| `/profile <region> <uid>` | Full profile দেখো |
+| `/rank <region> <uid>` | BR ও CS Rank দেখো |
+| `/guild <region> <guild_id>` | Guild এর তথ্য দেখো |
 
-[![Try on Telegram](https://img.shields.io/badge/Try%20on%20Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/paglu_like_bot) 
+### 💰 Points Economy
+| Command | কাজ |
+|---|---|
+| `/daily` | প্রতিদিন **+20 Points** claim করো |
+| `/verify` | Channel verify করে **+10 Bonus Points** নাও |
+| `/balance` | নিজের points ও stats দেখো |
+| `/leaderboard` | Monthly top 10 players দেখো |
 
-## 🤖 Bot Commands
-- `/start` - Start the bot and verify membership.
-- `/like <region> <uid>` - Send likes to the specified UID (Example: `/like bd 12345678`).
-- `/help` - Show the help menu with all available commands.
-- `/remain` - (Owner Only) View detailed daily usage stats.
+> 💡 `/like` করতে **20 pts** লাগে | `/visit` করতে **10 pts** লাগে
+
+### 📊 General
+| Command | কাজ |
+|---|---|
+| `/start` | Bot শুরু করো |
+| `/help` | সব command দেখো |
+| `/ping` | Bot latency চেক করো |
+| `/status` | নিজের status দেখো |
+| `/servertime` | Server time দেখো |
+| `/about` | Bot সম্পর্কে জানো |
+
+### 👑 Owner Only
+| Command | কাজ |
+|---|---|
+| `/broadcast <message>` | সবাইকে message পাঠাও |
+| `/addpoints <uid> <amount>` | যেকোনো user কে points দাও |
+| `/ban <uid>` | User কে ban করো |
+| `/unban <uid>` | User কে unban করো |
+| `/users` | User stats দেখো |
+| `/remain` | সবার points দেখো |
 
 ---
 
-## 🚀 Deployment
-[![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://dashboard.render.com/web/new)
-### Prerequisites
-- Python 3.9+
-- A Telegram Bot Token from [@BotFather](https://t.me/BotFather)
+## 🌍 Supported Regions
 
-### Environment Variables
-Set the following environment variables in your hosting provider (e.g., Render, Railway, Vercel):
+`bd` `ind` `sg` `br` `ru` `us` `th` `id` `pk` `vn` `tw` `me` `na`
 
-```bash
-BOT_TOKEN=your_bot_token_here
-WEBHOOK_URL=https://your-app-domain.com  # Optional: Only for Webhook mode
-PORT=5000                                # Optional: Default is 5000
+**Example:**
+```
+/like bd 123456789
+/info bd 123456789
+/visit bd 123456789
 ```
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/itz-paglu/Free-Fire-Like-Bot
-   cd Free-Fire-Like-Bot
-   ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the bot:
-   ```bash
-   python main.py
-   ```
+---
+
+## 🚀 Render এ Deploy করো
+
+বিস্তারিত বাংলা গাইড দেখো 👉 **[RENDER_DEPLOY.md](RENDER_DEPLOY.md)**
+
+### Quick Steps
+1. [render.com](https://render.com) এ Sign Up করো
+2. GitHub এ এই project push করো
+3. Render এ **New Web Service** বানাও
+4. Build command: `pip install -r requirements.txt`
+5. Start command: `python main.py`
+6. Environment variable যোগ করো: `BOT_TOKEN = তোমার_token`
+7. Deploy! ✅
 
 ---
 
-## 🔗 How it Works
-1. **API Integration**: The bot communicates with a premium Free Fire Like API to process requests.
-2. **Reset Cycle**: Limits are automatically reset at **00:00 UTC** every day.
+## ⚙️ Environment Variables
 
-
-## 📊 Repository Stats
-
-<p align="center">
-  <img src="https://img.shields.io/github/stars/itz-paglu/Free-Fire-Like-Bot?style=for-the-badge&logo=github&color=yellow" />
-  <img src="https://img.shields.io/github/forks/itz-paglu/Free-Fire-Like-Bot?style=for-the-badge&logo=github&color=blue" />
-  <img src="https://img.shields.io/github/contributors/itz-paglu/Free-Fire-Like-Bot?style=for-the-badge&logo=github&color=green" />
-  <img src="https://komarev.com/ghpvc/?username=itz-paglu&repo=Free-Fire-Like-Bot&style=for-the-badge&color=red" />
-</p>
+| Variable | Required | Description |
+|---|---|---|
+| `BOT_TOKEN` | ✅ হ্যাঁ | [@BotFather](https://t.me/BotFather) থেকে নাও |
 
 ---
 
-## 💛 Credits  
+## 📦 Requirements
 
-<p align="center">
-  <a href="https://t.me/itzpaglu">
-    <img src="https://img.shields.io/badge/Owner-🔥%20@itzpaglu-pink?style=for-the-badge&logo=telegram" />
-  </a>
-  <a href="https://t.me/paglu_dev">
-    <img src="https://img.shields.io/badge/Channel-TARIKUL.dev-blue?style=for-the-badge&logo=telegram" />
-  </a>
-</p>
+```
+pytelegrambotapi
+requests
+flask
+gunicorn
+python-dateutil
+```
 
-<p align="center">
-  <a href="https://github.com/itz-paglu/Free-Fire-Like-Bot/stargazers" target="_blank">
-    <img src="https://img.shields.io/badge/⭐%20Star%20This%20Repo-yellow?style=for-the-badge&logo=github" />
-  </a>
-</p>
+Install করো:
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 💻 Local এ Run করো
+
+```bash
+# Clone করো
+git clone https://github.com/তোমার-username/ff-likes-bot
+cd ff-likes-bot
+
+# Packages install করো
+pip install -r requirements.txt
+
+# BOT_TOKEN set করো (Linux/Mac)
+export BOT_TOKEN="তোমার_bot_token"
+
+# Run করো
+python main.py
+```
+
+---
+
+## 🔗 Links
+
+| | Link |
+|---|---|
+| 📢 Channel | [@maybesifatx69](https://t.me/maybesifatx69) |
+| 💬 Group | [Join Group](https://t.me/maybesifatx69) |
+| 🔴 YouTube | [@maybes1fu](https://youtube.com/@maybes1fu) |
+| 👑 Owner | [@MaybeSifu](https://t.me/MaybeSifu) |
+
+---
+
+<div align="center">
+
+**☠️ Made with 💀 by SIFAT**
+
+[![Channel](https://img.shields.io/badge/Telegram-@maybesifatx69-2CA5E0?style=for-the-badge&logo=telegram)](https://t.me/maybesifatx69)
+[![YouTube](https://img.shields.io/badge/YouTube-@maybes1fu-FF0000?style=for-the-badge&logo=youtube)](https://youtube.com/@maybes1fu)
+
+</div>

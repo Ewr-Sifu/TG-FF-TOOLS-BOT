@@ -1,0 +1,14 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "jqL1o_7-jxMygs__HE_Sa"
+uri = "file://README.md"
+type = "text"
+title = "README.md — Project Overview"
+
+[[outputs]]
+id = "S5q989JaHmhp7tJPl4DiR"
+uri = "file://RENDER_DEPLOY.md"
+type = "text"
+title = "RENDER_DEPLOY.md — Render Deploy Guide (বাংলায়)"
