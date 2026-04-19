@@ -1,4 +1,4 @@
-# 🚀 Render এ Bot Deploy করার গাইড
+# 🚀 Render Bot Deploy 
 
 ## ✅ Step 1 — Render Account বানাও
 
