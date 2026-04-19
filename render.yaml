@@ -1,4 +1,4 @@
-
+ 
 services:
   - type: web
     name: free-fire-bot
